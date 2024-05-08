@@ -96,7 +96,7 @@ let createPeerConnection = async (MemberId) => {
 
 
     if(!localStream){
-        localStream = await navigator.mediaDevices.getUserMedia({video:true, audio:false})
+        localStream = await navigator.mediaDevices.getUserMedia({video:true, audio:true})
         document.getElementById('user-1').srcObject = localStream
     }
 
@@ -174,9 +174,7 @@ let toggleMic = async () => {
         document.getElementById('mic-btn').style.backgroundColor = 'rgb(179, 102, 249, .9)'
     }
 }
-console.log(toggleMic)
-console.log(document.getElementById('mic-btn').addEventListener('click', toggleMic))
-  
+
 window.addEventListener('beforeunload', leaveChannel)
 
 document.getElementById('camera-btn').addEventListener('click', toggleCamera)
